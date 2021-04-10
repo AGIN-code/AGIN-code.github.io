@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="typora-vue-theme主题介绍, AGIN-Blog">
+    <meta name="keywords" content="物理实验数据的代码处理, AGIN-Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>typora-vue-theme主题介绍 | AGIN-Blog</title>
+    <title>物理实验数据的代码处理 | AGIN-Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -331,7 +331,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">typora-vue-theme主题介绍</h1>
+                    <h1 class="description center-align post-title">物理实验数据的代码处理</h1>
                 </div>
             </div>
         </div>
@@ -353,12 +353,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
-                            </a>
-                        
-                            <a href="/tags/Markdown/">
-                                <span class="chip bg-color">Markdown</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -369,8 +365,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -382,7 +378,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-07
+                    2021-03-27
                 </div>
                 
 
@@ -391,7 +387,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    668
                 </div>
                 
 
@@ -408,7 +404,104 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="物理实验数据的代码处理"><a href="#物理实验数据的代码处理" class="headerlink" title="物理实验数据的代码处理"></a>物理实验数据的代码处理</h2><h3 id="实验代码"><a href="#实验代码" class="headerlink" title="实验代码"></a>实验代码</h3><pre class=" language-bash"><code class="language-bash">from math <span class="token function">import</span> *
+<span class="token comment" spellcheck="true">#关于金属丝伸长中标尺数据的处理</span>
+list1<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#list2=[]</span>
+list3<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#list4=[]</span>
+m<span class="token operator">=</span>0
+<span class="token comment" spellcheck="true">#t=0</span>
+sum0<span class="token operator">=</span>0<span class="token comment" spellcheck="true">#逐差法得到数据进行差的平方求和</span>
+sum<span class="token operator">=</span>0<span class="token comment" spellcheck="true">#读数逐差法得到的数据求和</span>
+<span class="token keyword">while</span> 1:
+    data<span class="token operator">=</span>eval<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请从小到大输入金属丝在增重时的标尺像读数的平均值（ni），输入负数值停止"</span><span class="token punctuation">))</span>   <span class="token comment" spellcheck="true">#循环输入</span>
+    <span class="token keyword">if</span> data<span class="token operator">&lt;</span>0:
+        <span class="token keyword">break</span>
+    list1.append<span class="token punctuation">(</span>1<span class="token punctuation">)</span>
+    list1<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token operator">=</span>data<span class="token comment" spellcheck="true">#列表储存源试验数据</span>
+    m+<span class="token operator">=</span>1
+<span class="token comment" spellcheck="true">#while 1:</span>
+    <span class="token comment" spellcheck="true">#data = eval(input("请从小到大输入金属丝在减重时的标尺像读书，输入负数值停止"))  # 循环输入</span>
+    <span class="token comment" spellcheck="true">#if data &lt; 0:</span>
+        <span class="token comment" spellcheck="true">#break</span>
+    <span class="token comment" spellcheck="true">#list2.append(1)</span>
+    <span class="token comment" spellcheck="true">#list2[t] = data  # 列表储存源试验数据</span>
+    <span class="token comment" spellcheck="true">#sum+=data</span>
+    <span class="token comment" spellcheck="true">#t+=1</span>
+<span class="token keyword">for</span> y <span class="token keyword">in</span> range<span class="token punctuation">(</span>m-1<span class="token punctuation">)</span>:
+    list3.append<span class="token punctuation">(</span>1<span class="token punctuation">)</span>
+    list3<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token operator">=</span>list1<span class="token punctuation">[</span>y+1<span class="token punctuation">]</span>-list1<span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token comment" spellcheck="true">#原始测量数据逐差法求变化量</span>
+    sum+<span class="token operator">=</span>list3<span class="token punctuation">[</span>y<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true">#for y in range(t-1):</span>
+    <span class="token comment" spellcheck="true">#list4.append(1)</span>
+    <span class="token comment" spellcheck="true">#list4[y]=list2[y+1]-list2[y]</span>
+<span class="token comment" spellcheck="true">#list3.extend(list4)</span>
+dn_<span class="token operator">=</span>sum/<span class="token punctuation">(</span>m-1<span class="token punctuation">)</span>
+deltn<span class="token operator">=</span>dn_
+print<span class="token punctuation">(</span><span class="token string">"标尺读数变化的平均值是：{}"</span>.format<span class="token punctuation">(</span>dn_<span class="token punctuation">))</span>
+
+list3<span class="token punctuation">[</span>:<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span>y-dn_ <span class="token keyword">for</span> y <span class="token keyword">in</span> list3<span class="token punctuation">]</span><span class="token comment" spellcheck="true">#列表每一个都减去平均值</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> list3:
+    sum0+<span class="token operator">=</span>i**2
+on<span class="token operator">=</span><span class="token punctuation">(</span>sum0/<span class="token punctuation">(</span>m-2<span class="token punctuation">))</span>**0.5<span class="token comment" spellcheck="true">#计算标准差</span>
+on_<span class="token operator">=</span>on/<span class="token variable"><span class="token punctuation">((</span>m<span class="token number">-1</span><span class="token punctuation">)</span><span class="token operator">**</span><span class="token punctuation">(</span><span class="token number">0.5</span><span class="token punctuation">))</span></span>
+print<span class="token punctuation">(</span><span class="token string">"标准差为：{}"</span>.format<span class="token punctuation">(</span>on<span class="token punctuation">))</span>
+
+<span class="token comment" spellcheck="true">#关于金属丝直径d的数据处理</span>
+list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+sum1<span class="token operator">=</span>0   <span class="token comment" spellcheck="true">#总分</span>
+n<span class="token operator">=</span>0     <span class="token comment" spellcheck="true">#总人数</span>
+average<span class="token operator">=</span>0  <span class="token comment" spellcheck="true">#平均分</span>
+sum2<span class="token operator">=</span>0<span class="token comment" spellcheck="true">#差平方和</span>
+
+<span class="token keyword">while</span> 1:
+    data<span class="token operator">=</span>eval<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入多个金属丝修正后的直径di，输入负数值停止"</span><span class="token punctuation">))</span>   <span class="token comment" spellcheck="true">#循环输入</span>
+    <span class="token keyword">if</span> data<span class="token operator">&lt;</span>0:
+        <span class="token keyword">break</span>
+    list.append<span class="token punctuation">(</span>1<span class="token punctuation">)</span>
+    list<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token operator">=</span>data<span class="token comment" spellcheck="true">#列表储存源试验数据</span>
+    sum1+<span class="token operator">=</span>data
+    n+<span class="token operator">=</span>1
+
+average <span class="token operator">=</span> sum1/n<span class="token comment" spellcheck="true">#计算d平均值</span>
+deltaverage<span class="token operator">=</span>average
+print<span class="token punctuation">(</span><span class="token string">"金属丝直径的平均值是：{}"</span>.format<span class="token punctuation">(</span>average<span class="token punctuation">))</span>
+list<span class="token punctuation">[</span>:<span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span>y-average <span class="token keyword">for</span> y <span class="token keyword">in</span> list<span class="token punctuation">]</span><span class="token comment" spellcheck="true">#列表每一个都减去平均值</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> list:
+    sum2+<span class="token operator">=</span>i**2
+oi<span class="token operator">=</span><span class="token punctuation">(</span>sum2/<span class="token punctuation">(</span>n-1<span class="token punctuation">))</span>**0.5<span class="token comment" spellcheck="true">#计算标准差</span>
+oi_<span class="token operator">=</span>oi/<span class="token punctuation">(</span>n**<span class="token punctuation">(</span>0.5<span class="token punctuation">))</span>
+print<span class="token punctuation">(</span><span class="token string">"标准差od为：{}"</span>.format<span class="token punctuation">(</span>oi<span class="token punctuation">))</span>
+print<span class="token punctuation">(</span><span class="token string">"od除以根号n={}"</span>.format<span class="token punctuation">(</span>oi_<span class="token punctuation">))</span>
+
+
+<span class="token comment" spellcheck="true">#计算被测金属丝的杨氏弹性模量</span>
+d<span class="token operator">=</span>eval<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"输入镜尺距离(mm)："</span><span class="token punctuation">))</span>*0.001
+l<span class="token operator">=</span>eval<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"输入金属丝长度(mm)："</span><span class="token punctuation">))</span>*0.001
+k<span class="token operator">=</span>eval<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"输入光杠杆常数(mm)："</span><span class="token punctuation">))</span>*0.001
+dn<span class="token operator">=</span>eval<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">"请输入标尺读数变化的平均值(mm)"</span><span class="token punctuation">))</span>*0.001<span class="token comment" spellcheck="true">#化成国际单位制</span>
+average*<span class="token operator">=</span>0.001<span class="token comment" spellcheck="true">#化成国际单位制</span>
+od<span class="token operator">=</span>0
+ol<span class="token operator">=</span>0
+ok<span class="token operator">=</span>0<span class="token comment" spellcheck="true">#因为实验中只测了一组数据，为了简化计算，暂且均按照0处理</span>
+
+
+om<span class="token operator">=</span>0.003
+f<span class="token operator">=</span>9.79163
+of<span class="token operator">=</span>om*<span class="token punctuation">(</span>9.79163<span class="token punctuation">)</span>
+E_<span class="token operator">=</span><span class="token punctuation">(</span>8*d*l*f<span class="token punctuation">)</span>/<span class="token punctuation">(</span>pi*<span class="token punctuation">(</span>average**2<span class="token punctuation">)</span>*k*dn<span class="token punctuation">)</span>
+Ee<span class="token operator">=</span><span class="token punctuation">((</span>ol/l<span class="token punctuation">)</span>**2+<span class="token punctuation">(</span>of/f<span class="token punctuation">)</span>**2+<span class="token punctuation">(</span>od/d<span class="token punctuation">)</span>**2+<span class="token punctuation">(</span>oi_/deltaverage<span class="token punctuation">)</span>**2+<span class="token punctuation">(</span>ok/k<span class="token punctuation">)</span>**2+<span class="token punctuation">(</span>on_/deltn<span class="token punctuation">)</span>**2<span class="token punctuation">)</span>**<span class="token punctuation">(</span>0.5<span class="token punctuation">)</span>
+oe_<span class="token operator">=</span>Ee*E_
+
+print<span class="token punctuation">(</span><span class="token string">"E={}+/-{}"</span>.format<span class="token punctuation">(</span>E_,oe_<span class="token punctuation">))</span>
+print<span class="token punctuation">(</span><span class="token string">"Ee={}*100%"</span>.format<span class="token punctuation">(</span>Ee<span class="token punctuation">))</span>
+
+<span class="token comment" spellcheck="true">#代码结束</span>
+
+</code></pre>
+<p>More info: <a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_49484368/article/details/115258662?spm=1001.2014.3001.5501">CSDN博客</a></p>
+
                 
             </div>
             <hr/>
@@ -424,7 +517,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">赵奇</a>
+                    <a href="/about" rel="external nofollow noreferrer">高某</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -434,7 +527,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://agin-code.github.io/2018/09/07/tset/">http://agin-code.github.io/2018/09/07/tset/</a>
+                    <a href="http://agin-code.github.io/2021/03/27/tset/">http://agin-code.github.io/2021/03/27/tset/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -447,7 +540,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">赵奇</a>
+                    <a href="/about" target="_blank">高某</a>
                     !
                 </span>
             </div>
@@ -472,12 +565,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
-                                </a>
-                            
-                                <a href="/tags/Markdown/">
-                                    <span class="chip bg-color">Markdown</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -690,30 +779,30 @@
                 本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/07/tset/">
+                <a href="/2021/03/27/tset/">
                     <div class="card-image">
                         
-                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="typora-vue-theme主题介绍">
+                        <img src="/source/images/xxx.jpg" class="responsive-img" alt="物理实验数据的代码处理">
                         
-                        <span class="card-title">typora-vue-theme主题介绍</span>
+                        <span class="card-title">物理实验数据的代码处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+                            物理实验数据的代码处理,Python入门上手使用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2018-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -724,12 +813,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
